@@ -22,6 +22,11 @@
 
 * { box-sizing: border-box; }
 
+/* [hidden] must always win over any component's own `display` rule below -
+   without this, elements that set `display: flex` (login screen, dashboard,
+   modal overlay) stay visible even when the `hidden` attribute is set. */
+[hidden] { display: none !important; }
+
 html, body {
   margin: 0;
   padding: 0;
